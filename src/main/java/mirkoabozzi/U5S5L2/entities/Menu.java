@@ -19,4 +19,13 @@ public class Menu {
         this.toppingList = toppingList;
         this.drinkList = drinkList;
     }
+
+    public void printMenu() {
+        System.out.println("Pizze");
+        pizzaList.forEach(pizza -> System.out.println(pizza.descriptions + " Calorie: " + pizza.calories + " Prezzo: " + pizza.price + " €"));
+        System.out.println("Topping");
+        toppingList.forEach(topping -> System.out.println("Topping: " + topping.getIngredients()));
+        System.out.println("Drink");
+        drinkList.forEach(drink -> System.out.println(drink.descriptions + " Calorie: " + drink.calories + " Prezzo: " + drink.price + " €"));
+    }
 }

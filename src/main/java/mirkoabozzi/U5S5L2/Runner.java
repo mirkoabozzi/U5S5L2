@@ -17,7 +17,12 @@ public class Runner implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
 
-        System.out.println(menu);
-        System.out.println(order);
+//        System.out.println(menu);
+//        System.out.println(order);
+
+        System.out.println("Stampa menu");
+        menu.printMenu();
+        System.out.println("Stampa ordine");
+        order.printOrder();
     }
 }

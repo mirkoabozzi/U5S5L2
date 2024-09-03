@@ -6,6 +6,7 @@ import mirkoabozzi.U5S5L2.entities.Table;
 import mirkoabozzi.U5S5L2.enums.OrderState;
 import mirkoabozzi.U5S5L2.enums.TableState;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
@@ -33,8 +34,8 @@ public class OrderConfiguration {
     }
 
     @Bean
-    public Order getOrder(@Qualifier("getBeer") Product product1, @Qualifier("getPizzaPatatine") Product product2, @Qualifier("getTable1") Table table) {
-        return new Order(List.of(product1, product2), table, 1, OrderState.IN_CORSO, 2, LocalDateTime.of(2024, 9, 3, 15, 0, 0), 50);
+    public Order getOrder(@Qualifier("getBeer") Product product1, @Qualifier("getPizzaPatatine") Product product2, @Qualifier("getTable1") Table table, @Value("${coperto.costoCoperto}") double coperto) {
+        return new Order(List.of(product1, product2), table, 1, OrderState.IN_CORSO, 2, LocalDateTime.of(2024, 9, 3, 15, 0, 0), coperto);
     }
 
 }
